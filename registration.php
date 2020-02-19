@@ -1,7 +1,7 @@
 <?php
 require_once 'functions.php';
 
-checkGuest();
+checkGuest(); // заборонити залогіненим користувачам заходити на цю сторінку!
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') :
     function validateData() {
@@ -66,7 +66,7 @@ endif;
                     <div class="card-header">Реєстрація</div>
 
                     <div class="card-body">
-                        <?php if(!empty($errors)) : ?>
+                        <?php if(isset($errors) && !empty($errors)) : ?>
                             <?php foreach ($errors as $error) :?>
 
                                 <div class="row">

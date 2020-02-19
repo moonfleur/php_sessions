@@ -3,7 +3,6 @@
 global $dbh;
 
 init();
-getDBConnect();
 
 function init() {
     session_start();
@@ -43,15 +42,15 @@ function login($user_id) {
 
     return false;
 }
-
+// заборонити НЕ залогіненим користувачам заходити на цю сторінку!
 function checkLogin() {
     if(!isset($_SESSION['auth_user']) || empty($_SESSION['auth_user'])) {
-        header('Location: login.php');
+        header('Location: login.php'); // перенаправляємо на сторінку логіна
     }
 }
-
+// заборонити залогіненим користувачам заходити на цю сторінку!
 function checkGuest() {
     if(isset($_SESSION['auth_user']) && !empty($_SESSION['auth_user'])) {
-        header('Location: cabinet.php');
+        header('Location: cabinet.php'); // перенаправляємо в кабінет
     }
 }

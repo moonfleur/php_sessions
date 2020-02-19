@@ -31,22 +31,16 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 <?php if (!isset($_SESSION['auth_user']) || empty(isset($_SESSION['auth_user']))) : ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Вхід</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="registration.php">Реєстрація</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Вхід</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registration.php">Реєстрація</a>
+                    </li>
                 <?php else: ?>
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Меню <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="logout.php">Вихід</a>
-                    </div>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="logout.php">Вихід</a>
+                    </li>
                 <?php endif; ?>
             </ul>
         </div>
